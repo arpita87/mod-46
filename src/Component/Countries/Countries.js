@@ -18,6 +18,8 @@
 
 import React, { useEffect, useState } from 'react';
 import Country from '../County/Country';
+import './Countries.css'
+
 //1st kaj
 const Countries = () => {
     const [countries, setCountries] = useState([])
@@ -31,18 +33,22 @@ const Countries = () => {
 
 
     return (
-        <div>
-            <h2>visit country with  rest countries </h2>
+        <div >
+            <h2>visit country with........ rest countries </h2>
             {/* {//4th kaj
                 countries.map(country => console.log(country))
             } */}
-            {
-                countries.map(country => <Country
-                    country={country}
-                //  name={country.name.common}
-                // area={country.area}
-                ></Country>)
-            }
+            <div className="all-countries">
+                {
+                    countries.map(country => <Country
+                        country={country}
+                        //unique key
+                        key={country.cca3}
+                    //  name={country.name.common}
+                    // area={country.area}
+                    ></Country>)
+                }
+            </div>
         </div>
     );
 };
